@@ -1,0 +1,42 @@
+<%= form_with(model: catalog) do |form| %>
+  <% if catalog.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(catalog.errors.count, "error") %> prohibited this catalog from being saved:</h2>
+
+      <ul>
+        <% catalog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :movie_id, style: "display: block" %>
+    <%= form.text_field :movie_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :overview, style: "display: block" %>
+    <%= form.text_field :overview %>
+  </div>
+
+  <div>
+    <%= form.label :poster_path, style: "display: block" %>
+    <%= form.text_field :poster_path %>
+  </div>
+
+  <div>
+    <%= form.label :backdrop_path, style: "display: block" %>
+    <%= form.text_field :backdrop_path %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
